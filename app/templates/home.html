@@ -1,0 +1,51 @@
+<html>
+<h1>Cab Trip Data - API</h1>
+<h3>Clear Cache</h3>
+<form action="/clear_cache/" method="post">
+    <button name="clear_cache" type="submit">Clear Cache</button>
+</form>
+
+<h2>Method 1: Access via form</h2>
+<form method="POST">
+    Medallion (ID): <input name="medallion"> (Single or Multiple entries possible. Separate by comma. Ex: 1234, 5678...)<br/>
+    Date: <input name="date"> (ex: 2013-12-31)<br/>
+    Output: <input type="radio" name="output" value="json"> Json
+    <input type="radio" name="output" value="text" checked> Text<br/>
+    Source: <input type="radio" name="source" value="cache" checked> Cache
+    <input type="radio" name="source" value="no_cache"> Fresh Data (Ignore Cache)<br/>
+    <input type="submit">
+</form>
+<br/>
+<h2>Method 2: Access directly (via URL)</h2>
+<h3>API Documentation</h3>
+This is a simple API implementation. Only main factors are taken into consideration as required. Edge cases are not taken into consideration such as providing wrong ID, Date or wrong URL etc to keep it simple. Implementation for edge cases can be done easily.
+<br/><br/>
+Users can just provide medallion id to get all the trips details for the given medallion. As well as, users can provide date parameter to pull data for the specified date.
+<br/><br/>
+By default (if no extra parameters are provided) the API will return output as TEXT and also all results will be cached. Users can ask for JSON output just by providing <b>&output=json</b> parameter.
+<br/><br/>
+Cache can be cleared by clicking the <b>Clear Cache</b> button (At top left corner of the page). Users can also ask for fresh data and ignore the cache by providing <b>&cache=false</b> parameter.
+<br/><br/>
+Some features and examples are bellow:
+
+<h4>1. Simple Trip - Text</h4>
+Add <b>/api/v1/trips</b> at the end of the main url then add <b>?medallion={MEDALLION ID}</b><br/>
+Example: http://127.0.0.1:5000/api/v1/trips?medallion=A0B5AF0F9B31690CEBB51ECD27D2BE71
+
+<h4>2. Simple Trip - Json</h4>
+Add <b>&output=json</b> at the end of any url to get JSON as output.<br/>
+Example: http://127.0.0.1:5000/api/v1/trips?medallion=A0B5AF0F9B31690CEBB51ECD27D2BE71<b>&output=json</b>
+
+<h4>3. Trip with Date</h4>
+Add <b>&date={YYYY-MM-DD}</b> at the end of any url to get trip data from the specified date.<br/>
+Example: http://127.0.0.1:5000/api/v1/trips?medallion=A0B5AF0F9B31690CEBB51ECD27D2BE71<b>&date=2013-12-06</b>
+
+<h4>4. Trips with Multiple Medallions</h4>
+Add <b>&medallion={MEDALLION ID}</b> as much as you want after the first medallion id starts with (?) to get trip data from all the ids.<br/>
+Example: http://127.0.0.1:5000/api/v1/trips<b><u>?medallion=</u>A0B5AF0F9B31690CEBB51ECD27D2BE71<u>&medallion=</u>8F0A1E787329C1C08F8F9120EE68E056<u>&medallion=</u>A21033DE83739A12D04B23384D1A3CC5</b>
+
+<h4>5. Force to Ignore The Cache and Ask for Fresh Data</h4>
+Add <b>&cache=false</b> at the end of the url to ignore the cache and ask for fresh data.<br/>
+Example: http://127.0.0.1:5000/api/v1/trips?medallion=A0B5AF0F9B31690CEBB51ECD27D2BE71&output=json<b>&cache=false</b>
+
+</html>
