@@ -13,7 +13,7 @@ Full API Documentation is available on API's homepage.
 * Visit http://0.0.0.0:5000 to access the homepage of the API 
 
 # Note
-The Database is kind of big so it takes time to fire up the docker. (Tipically 2-5 minutes)
+The Database is kind of big so it takes time to fire up the docker for the first time. (Tipically 2-5 minutes)
 ![Terminal](https://i.postimg.cc/QtBNcSzC/50264367-527077407785874-4012852528076029952-n.png)
 
 # Screenshots
