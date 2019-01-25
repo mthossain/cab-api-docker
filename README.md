@@ -23,3 +23,12 @@ The Database is kind of big so it takes time to fire up the docker for the first
 ![JSON Output](https://i.postimg.cc/L4WdTCHk/Screen-Shot-2019-01-19-at-9-17-16-pm.png)
 ### TEXT Output
 ![TEXT Output](https://i.postimg.cc/bNS7FxJ7/Screen-Shot-2019-01-19-at-9-17-27-pm.png)
+
+## Author
+#### M TanVir Hossain
+
+Software Engineer
+
+Sydney, Australia
+
+www.mtanvirhossain.com
